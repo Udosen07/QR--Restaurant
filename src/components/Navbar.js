@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
+import { FaCartArrowDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { TiHome } from "react-icons/ti";
 
@@ -53,12 +54,29 @@ const Navbar = () => {
           >
             Feedback
           </NavLink>
-          <a href="#" class="transform hover:scale-110">
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `transform hover:scale-110 flex gap-2 items-center ${
+                isActive ? "active" : ""
+              }`
+            }
+          >
             Contact Us
-          </a>
-          <a href="#" class="transform hover:scale-110">
+          </NavLink>
+          <NavLink
+            to="/cart"
+            className={({ isActive }) =>
+              `transform hover:scale-110 flex gap-2 items-center ${
+                isActive ? "active" : ""
+              }`
+            }
+          >
+            <span>
+              <FaCartArrowDown />
+            </span>{" "}
             Cart
-          </a>
+          </NavLink>
         </div>
 
         <button
